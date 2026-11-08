@@ -1,22 +1,14 @@
-# saldo. — planilha web com senha
+# saldo. — planilha web
 
-Aplicação Next.js 15, com tabelas editáveis, backup JSON e login validado no servidor.
+Aplicativo Next.js com planilhas editáveis e backup JSON, **sem login e sem banco de dados**.
 
-## Configuração na Vercel
+## Como usar
 
-Crie a variável obrigatória `SALDO_PASSWORD` em Settings → Environment Variables, ambiente Production. Use senha exclusiva de pelo menos 16 caracteres. Faça **Redeploy** após configurar.
+Acesse o site diretamente. As abas Entradas, Gastos, Faturas, Mercado VA e Wishlist permitem edição nas células. Os dados são guardados no `localStorage` do navegador e podem ser exportados/importados pela aba Backup.
 
-Opcionalmente, crie `SALDO_SECONDARY_PASSWORD` com uma segunda senha diferente e de pelo menos 16 caracteres. As duas senhas serão aceitas. Não use `123` nem coloque valores secretos no repositório. Não precisa de `DATABASE_URL` nem `SALDO_SESSION_SECRET`. A assinatura das sessões é derivada da senha **somente no servidor**, com cookie HttpOnly, Secure em produção e SameSite Strict. Trocar a senha invalida sessões anteriores.
+## Atenção à privacidade
 
-## Dados
-
-As abas Entradas, Gastos, Faturas, Mercado VA e Wishlist são editáveis como planilhas. Dados são salvos em `localStorage` no navegador em que foram inseridos. A lista Mercado VA começa vazia. Use Backup para exportar/importar JSON.
-
-**Importante:** o login restringe acesso ao site, mas `localStorage` **não é criptografado nem protegido pela senha**. Pessoas com acesso ao perfil do navegador podem ler ou alterar os dados. Não há sincronização entre dispositivos, nem recuperação automática após limpeza do navegador. Faça backups JSON regularmente.
-
-A proteção de tentativas de senha implementada no endpoint é em memória e não é robusta em ambientes serverless com múltiplas instâncias. Para expor publicamente, configure rate limiting persistente na borda e considere proteção adicional da Vercel.
-
-Não existe migração automática do formato v2 para v3. O formato JSON de importação é v3. O painel mostra apenas valores efetivamente lançados, não é uma conciliação contábil.
+O site está público e não exige autenticação. Qualquer pessoa com o link consegue abrir o aplicativo e criar dados no próprio navegador. O `localStorage` não sincroniza entre dispositivos e pode ser lido por quem tem acesso ao perfil do navegador. Faça backups JSON frequentes. Não coloque dados sensíveis se precisa de acesso restrito.
 
 ## Desenvolvimento
 
@@ -24,3 +16,5 @@ Não existe migração automática do formato v2 para v3. O formato JSON de impo
 npm install
 npm run dev
 ```
+
+Não são necessárias variáveis de ambiente.
