@@ -4,9 +4,9 @@ Aplicação Next.js 15, com tabelas editáveis, backup JSON e login validado no 
 
 ## Configuração na Vercel
 
-Crie **somente** a variável de ambiente `SALDO_PASSWORD` em Settings → Environment Variables, ambiente Production. Use senha exclusiva de pelo menos 16 caracteres. Faça **Redeploy** após configurar.
+Crie a variável obrigatória `SALDO_PASSWORD` em Settings → Environment Variables, ambiente Production. Use senha exclusiva de pelo menos 16 caracteres. Faça **Redeploy** após configurar.
 
-Não precisa de `DATABASE_URL` nem `SALDO_SESSION_SECRET`. A assinatura das sessões é derivada da senha **somente no servidor**, com cookie HttpOnly, Secure em produção e SameSite Strict. Trocar a senha invalida sessões anteriores.
+Opcionalmente, crie `SALDO_SECONDARY_PASSWORD` com uma segunda senha diferente e de pelo menos 16 caracteres. As duas senhas serão aceitas. Não use `123` nem coloque valores secretos no repositório. Não precisa de `DATABASE_URL` nem `SALDO_SESSION_SECRET`. A assinatura das sessões é derivada da senha **somente no servidor**, com cookie HttpOnly, Secure em produção e SameSite Strict. Trocar a senha invalida sessões anteriores.
 
 ## Dados
 
