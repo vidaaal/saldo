@@ -25,6 +25,8 @@ export default function AssistantRichText({text}:{text:string}) {
   for(let i=0;i<lines.length;i++) {
     const line=lines[i].trim();
     if(!line) continue;
+    const total=line.match(/^>\s*Total previsto:\s*(.+)$/i);
+    if(total) {blocks.push(<div className="assistant-financial-total" key={i}><span>Total previsto</span><strong>{inline(total[1])}</strong></div>);continue}
     const header=cells(line);
     if(line.includes("|") && i+1<lines.length && isDivider(lines[i+1],header.length)) {
       const rows:string[][]=[];
