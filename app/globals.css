@@ -495,3 +495,17 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px soli
 .ai-v2-prompts button:hover{transform:translateY(-2px)}
 @media(max-width:750px){.finance-ai-v2{height:calc(100dvh - 180px);min-height:0}.ai-v2-inner{padding-top:24px}.ai-v2-welcome{margin:0}.ai-v2-orb{display:none}.ai-v2-welcome h3{font-size:34px}.ai-v2-welcome>p{font-size:13px;margin-bottom:20px}.ai-v2-prompts{gap:7px}.ai-v2-prompts button{padding:10px 13px}}
 
+
+/* Structured answers in the financial assistant */
+.ai-rich-text .ai-response-heading{margin:26px 0 10px;padding-top:18px;border-top:1px solid #ffffff24;color:#f2f7ef;font-size:16px;font-weight:650;line-height:1.35;letter-spacing:-.02em}
+.ai-rich-text .ai-response-heading:first-child{margin-top:0;padding-top:0;border-top:0}
+.ai-rich-text .ai-response-heading+p{margin-top:0}
+.ai-table-scroll{max-width:100%;margin:14px 0 20px;overflow-x:auto;border:1px solid #506852;border-radius:12px;scrollbar-color:#77957b transparent}
+.ai-table-scroll:focus-visible{outline:2px solid #c8f5bc;outline-offset:2px}
+.ai-response-table{width:100%;min-width:510px;border-collapse:collapse;table-layout:auto;color:#e1ebe0;font-size:13px;line-height:1.5}
+.ai-response-table th,.ai-response-table td{padding:11px 14px;text-align:left;vertical-align:top;overflow-wrap:anywhere;border-bottom:1px solid #ffffff16}
+.ai-response-table th{background:#314836;color:#eaf8e7;font-weight:650;white-space:nowrap}
+.ai-response-table tbody tr:nth-child(even){background:#ffffff08}
+.ai-response-table tbody tr:last-child td{border-bottom:0}
+.ai-response-table td:first-child{color:#f1f8ee;font-weight:600}
+@media(max-width:750px){.ai-response-table{min-width:450px;font-size:12px}.ai-response-table th,.ai-response-table td{padding:10px 11px}.ai-rich-text .ai-response-heading{font-size:15px}}
