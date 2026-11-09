@@ -572,3 +572,10 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px soli
 @media(min-width:751px){.workspace-assistant .workspace-content{padding:31px 48px 20px}.assistant-shell{height:100%}}
 @media(max-width:750px){.workspace-assistant .workspace-content{padding:20px 16px 94px}.assistant-shell{height:calc(100dvh - 180px);min-height:480px}.assistant-page-head{align-items:flex-start;padding-bottom:16px}.assistant-page-head h1{font-size:27px}.assistant-page-head p{font-size:13px}.assistant-export summary{gap:5px;padding:9px;font-size:0}.assistant-export summary svg{width:19px}.assistant-thread{gap:23px;padding:22px 0 28px}.assistant-message.user{max-width:92%;padding:12px 15px}.assistant-message.user p,.assistant-message.assistant .ai-rich-text{font-size:14px}.assistant-message.assistant{grid-template-columns:31px minmax(0,1fr);column-gap:10px}.assistant-message.assistant .assistant-avatar{width:31px;height:31px}.assistant-author strong{font-size:16px}.assistant-suggestions button{font-size:12px;padding:9px 12px;max-width:280px}.assistant-compose{min-height:62px;padding:7px 8px 7px 14px;border-radius:15px;gap:3px}.assistant-compose textarea{font-size:16px}.assistant-icon-button{width:36px;height:38px}.assistant-send{width:42px;height:42px}.assistant-caption{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.assistant-shell *{transition:none!important;animation:none!important}}
+
+.assistant-financial-total{display:flex;flex-direction:column;gap:2px;max-width:690px;margin:18px 0 0;padding:20px 24px 14px;border:1px solid #5f6d61;border-bottom:0;border-radius:16px 16px 0 0;background:#202723}
+.assistant-financial-total span{color:#bdc7bd;font-size:14px}
+.assistant-financial-total strong{color:#c4f2bd;font-size:31px;font-weight:650;line-height:1.2;letter-spacing:-.05em}
+.assistant-financial-total+.ai-table-scroll{max-width:690px;margin-top:0!important;border-top:0!important;border-radius:0 0 16px 16px!important}
+.assistant-financial-total+.ai-table-scroll .ai-response-table th{border-top:1px solid #ffffff26}
+@media(max-width:750px){.assistant-financial-total{padding:16px}.assistant-financial-total strong{font-size:25px}}
