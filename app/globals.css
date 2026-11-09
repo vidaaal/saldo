@@ -493,3 +493,14 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px soli
 @media(max-width:750px){
  .workspace-assistant .finance-ai-v2{min-height:420px}
 }
+
+/* Voice and export controls in the assistant composer */
+.ai-v2-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;color:#9cb09f;font-size:11px}
+.ai-v2-tools>div{display:flex;gap:7px;flex-wrap:wrap}
+.ai-v2-tools button{padding:7px 12px;background:#27362b;color:#c6e9c8;border:1px solid #405746;border-radius:9px;font-size:11px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.ai-v2-tools button:hover{background:#354d39;border-color:#9ad9a1;transform:translateY(-1px)}
+.ai-v2-file{display:none!important}
+.ai-v2-compose .ai-v2-tool-button{display:grid;place-items:center;width:37px;height:42px;flex-shrink:0;background:transparent;color:#b7d5ba;font-size:22px;border:1px solid transparent;border-radius:11px}
+.ai-v2-compose .ai-v2-tool-button:hover:not(:disabled){background:#344538;transform:none}
+.ai-v2-compose .ai-v2-tool-button.is-recording{color:#ff8e87;background:#58312d;animation:ai-pulse 1s ease-in-out infinite}
+@media(max-width:700px){.ai-v2-tools{font-size:10px;gap:5px}.ai-v2-tools button{padding:6px 9px;font-size:10px}.ai-v2-compose{gap:3px;padding-left:12px}.ai-v2-compose .ai-v2-tool-button{width:30px;font-size:19px}.ai-v2-compose textarea{font-size:13px}.ai-v2-compose button[type="submit"]{width:36px;height:39px}}
