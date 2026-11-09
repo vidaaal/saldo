@@ -47,6 +47,6 @@ return <section className="assistant-shell" aria-label="Assistente financeiro">
       <span className="assistant-compose-divider" aria-hidden="true"/>
       <button type="submit" className="assistant-send" disabled={!question.trim()||busy} aria-label="Enviar mensagem"><ArrowUp size={23} strokeWidth={2}/></button>
     </form>
-    <p className="assistant-caption"><span className="ai-v2-online"/>{transcribing?"Transcrevendo áudio…":recording?"Gravando áudio…":"Respostas baseadas nos seus registros. Não representam saldo bancário real."}</p>
+    <p className="assistant-caption"><span className="ai-v2-online"/>{transcribing?"Transcrevendo áudio…":recording?"Gravando áudio…":"Respostas baseadas nos seus registros, não no saldo bancário. Um resumo é enviado à Groq ao perguntar."}</p>
   </div>
 </section>}
