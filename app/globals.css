@@ -325,3 +325,60 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px soli
 }
 @media(max-width:360px){.launcher-grid{grid-template-columns:1fr}.launcher-item{min-height:88px;flex-direction:row;align-items:center}.launcher-icon{flex-shrink:0}.sheet-table tbody tr{grid-template-columns:1fr}.sheet-table td.row-index{grid-column:1}.sheet-table td.row-actions{grid-column:1;grid-row:1}}
 @media(prefers-reduced-motion:reduce){.feedback-toast,.feedback-check,.sheet-card,.sheet-table tbody tr{animation:none!important}.btn,.sheet-table input{transition:none!important}}
+
+/* v6: intentional section illustrations and repaired mobile grid layout */
+.module-sprite{--sprite-accent:#a9edb4;display:flex;align-items:center;gap:18px;padding:13px 20px;margin-bottom:22px;min-height:105px;border:1px solid #363c38;border-radius:15px;background:radial-gradient(circle at 12% 50%,#31433755,transparent 43%),#222625;overflow:hidden}
+.module-sprite-expense{--sprite-accent:#ffbd9c}.module-sprite-bill{--sprite-accent:#d4b9ff}.module-sprite-market{--sprite-accent:#e1e99a}.module-sprite-wish{--sprite-accent:#a8d7ff}.module-sprite-backup{--sprite-accent:#c8d0da}
+.module-sprite-art{position:relative;display:grid;place-items:center;width:82px;height:78px;flex:0 0 82px}
+.module-sprite-main{z-index:1;display:grid;place-items:center;width:62px;height:62px;border:2px solid var(--sprite-accent);border-radius:18px;background:#252d29;color:var(--sprite-accent);box-shadow:0 8px 20px #0004;animation:module-float 3.4s ease-in-out infinite}
+.module-sprite-orbit{position:absolute;width:12px;height:12px;border:2px solid var(--sprite-accent);border-radius:4px;opacity:.65;animation:module-orbit 4s ease-in-out infinite}
+.orbit-a{top:1px;right:0}.orbit-b{bottom:1px;left:0;animation-delay:-2s}
+.module-sprite-star{position:absolute;color:var(--sprite-accent);font-size:14px;animation:module-twinkle 2.7s ease-in-out infinite}
+.star-a{top:0;left:5px}.star-b{right:0;bottom:0;animation-delay:-1.2s}
+.module-sprite-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
+.module-sprite-copy strong{font-size:17px;letter-spacing:-.035em}
+.module-sprite-copy span{font-size:12px;line-height:1.5;color:#a5ada8}
+.module-sprite-income .module-sprite-main{animation:module-rise 2.9s ease-in-out infinite}
+.module-sprite-expense .module-sprite-main{animation:module-tilt 3.1s ease-in-out infinite}
+.module-sprite-bill .module-sprite-main{animation:module-pulse 3.3s ease-in-out infinite}
+.module-sprite-market .module-sprite-main{animation:module-sway 3s ease-in-out infinite}
+.module-sprite-wish .module-sprite-main{animation:module-heart 2.8s ease-in-out infinite}
+.module-sprite-backup .module-sprite-main{animation:module-float 3.1s ease-in-out infinite}
+@keyframes module-float{0%,100%{transform:translateY(2px)}50%{transform:translateY(-6px)}}
+@keyframes module-rise{0%,100%{transform:translateY(4px)}50%{transform:translateY(-9px)}}
+@keyframes module-tilt{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(6deg) translateY(-5px)}}
+@keyframes module-pulse{0%,100%{transform:scale(.98)}50%{transform:scale(1.075)}}
+@keyframes module-sway{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+@keyframes module-heart{0%,100%{transform:scale(1)}30%{transform:scale(1.1)}46%{transform:scale(1.02)}60%{transform:scale(1.08)}}
+@keyframes module-orbit{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(-6px,6px) rotate(45deg)}}
+@keyframes module-twinkle{0%,100%{opacity:.25;transform:scale(.65)}50%{opacity:1;transform:scale(1.2)}}
+.record-count{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 6px;background:#343d36;border-radius:7px;color:#c5e5c8;font-size:12px;vertical-align:middle;margin-left:6px}
+.empty-title{display:block;font-size:16px;font-weight:650;color:#e0e7e0;margin-bottom:7px}
+.empty-row .empty{white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important;line-height:1.55}
+@media(max-width:700px){
+ .compact-intro{margin:6px 0 20px}
+ .compact-intro h1{font-size:clamp(29px,7vw,35px)}
+ .sheet-card>.line{padding:0 0 17px!important}
+ .sheet-card>.line h2{font-size:18px}
+ .sheet-card>.line .btn{white-space:nowrap}
+ .module-sprite{padding:11px 13px;gap:13px;min-height:96px;margin-bottom:20px;border-radius:14px}
+ .module-sprite-art{width:67px;height:68px;flex-basis:67px}
+ .module-sprite-main{width:51px;height:51px;border-radius:15px}
+ .module-sprite-main svg{width:28px;height:28px}
+ .module-sprite-copy strong{font-size:15px}
+ .module-sprite-copy span{font-size:11px}
+ .sheet-table tbody tr:not(.empty-row){grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sheet-table tbody tr.empty-row{display:block!important;padding:0!important;min-height:0!important}
+ .sheet-table tbody tr.empty-row td.empty{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;width:100%!important;min-height:164px!important;padding:24px 18px!important;text-align:center!important;white-space:normal!important;word-break:normal!important;overflow-wrap:break-word!important;font-size:13px!important}
+ .sheet-table tbody tr.empty-row td.empty span{display:block!important;width:100%!important;max-width:300px!important;white-space:normal!important;word-break:normal!important;overflow-wrap:break-word!important}
+ .sheet-table td input[type="date"]{appearance:none;-webkit-appearance:none;display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;font-size:14px!important;padding:8px!important;overflow:hidden!important}
+ .sheet-table td input[type="date"]::-webkit-date-and-time-value{text-align:left;min-width:0}
+ .sheet-table td input[type="date"]::-webkit-datetime-edit{padding:0;max-width:100%}
+ .sheet-table td input[type="date"]::-webkit-calendar-picker-indicator{margin:0;max-width:18px;opacity:.7}
+ .sheet-table td[data-label="Vencimento"]{grid-column:1/-1}
+ .sheet-table td[data-label="Vencimento"] input{font-size:16px!important}
+ .sheet-table td.row-actions{align-items:flex-end}
+ .footer{margin-top:28px;padding-top:20px}
+}
+@media(max-width:360px){.sheet-table tbody tr:not(.empty-row){grid-template-columns:1fr}.sheet-table td.row-actions{grid-column:1;grid-row:1}}
+@media(prefers-reduced-motion:reduce){.module-sprite *{animation:none!important;transition:none!important}}
